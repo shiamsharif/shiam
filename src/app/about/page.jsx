@@ -62,36 +62,38 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Spencer Sharp. I live in New York City, where I design the
-            future.
+            I'm Shiam Sharif, who loves reading books.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’ve loved making things for as long as I can remember, and wrote
-              my first program when I was 6 years old, just two weeks after my
-              mom brought home the brand new Macintosh LC 550 that I taught
-              myself to type on.
+              If you had asked me a few years ago what I wanted to become, I would have simply said, "a software engineer." Today, my answer is a little different. I still love writing code, but I'm just as interested in understanding how products are built, how teams work together, and how research can solve real-world problems.
             </p>
             <p>
-              The only thing I loved more than computers as a kid was space.
-              When I was 8, I climbed the 40-foot oak tree at the back of our
-              yard while wearing my older sister’s motorcycle helmet, counted
-              down from three, and jumped — hoping the tree was tall enough that
-              with just a bit of momentum I’d be able to get to orbit.
+              My journey started in 2009 when I used my father's Sony VAIO for the first time. Like many kids, I mostly clicked around without knowing what I was doing. But as I grew older, I became curious about what was happening behind the screen. That curiosity eventually led me to programming, and I realized that I could write a few lines of code and create something from nothing. I was hooked.
             </p>
             <p>
-              I spent the next few summers indoors working on a rocket design,
-              while I recovered from the multiple surgeries it took to fix my
-              badly broken legs. It took nine iterations, but when I was 15 I
-              sent my dad’s Blackberry into orbit and was able to transmit a
-              photo back down to our family computer from space.
+              As a kid, I wasn't someone who talked a lot. I spent most of my time reading books, playing football or cricket, and later experimenting with computers. I've always enjoyed learning new things. Looking back, I think that habit has had the biggest influence on my life.
             </p>
             <p>
-              Today, I’m the founder of Planetaria, where we’re working on
-              civilian space suits and manned shuttle kits you can assemble at
-              home so that the next generation of kids really <em>can</em> make
-              it to orbit — from the comfort of their own backyards.
+              One of the hardest times I went through was having L5/S1 spine surgery when I was young. Recovery wasn't easy, but it changed me. Since I couldn't do many of the things I normally enjoyed, I spent more time reading books and the Holy Quran. That period taught me patience and made reading a part of my everyday life. Even today, whenever I want to learn something new, my first instinct is to find a good book.
             </p>
+
+            <p>
+              At university, I enjoyed almost every programming-related course, but Data Structures and Algorithms was my favorite. It was known as one of the toughest subjects, and I was happy to earn a perfect GPA in it. More than the grade itself, I enjoyed solving problems and understanding why things worked the way they did.
+            </p>
+            <p>
+              Something else happened along the way. While reading <i>Inspired: How to Create Products Customers Love</i>, I started looking beyond code. I became interested in how successful products are planned, how engineering teams make decisions, and how technical leaders balance business goals with technology. That's what sparked my interest in technical project management.
+            </p>
+            <p>
+              My goal isn't to stop being an engineer. I actually want to stay close to technology. I want to become someone who understands software engineering, AI research, product development, and project management well enough to connect all of them. I enjoy building things, but I also enjoy helping people build them together.
+            </p>
+            <p>
+              Outside of work, you'll usually find me with a cup of coffee and a book. One of my dreams is to have a quiet farmhouse with a small library where I can read, think, work on research, and occasionally write code without distractions.
+            </p>
+            <p>
+              I'm still learning, still making mistakes, and still building. I hope that never changes.
+            </p>
+            
           </div>
         </div>
         <div className="lg:pl-20">
