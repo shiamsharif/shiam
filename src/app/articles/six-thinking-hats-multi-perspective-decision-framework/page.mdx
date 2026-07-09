@@ -1,0 +1,49 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import sixHatImage from './sixhat.png'
+
+export const article = {
+  author: 'Sheike Shiam Sharif',
+  date: '2026-07-09',
+  title: 'Six Thinking Hats: A Multi-Perspective Decision Framework',
+  description:
+    'A practical framework for helping teams examine decisions through data, optimism, risk, creativity, emotion, and process.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+The **Six Thinking Hats** framework helps teams reach better decisions by ensuring that a problem is examined from multiple, distinct perspectives, which prevents critical aspects from being overlooked. By deliberately "wearing" different hats, a group can move beyond their standard thinking patterns to create a more **comprehensive and resilient outcome**.
+
+<Image src={sixHatImage} alt="Six Thinking Hats framework diagram" />
+
+Each hat contributes to the decision-making process in a specific way:
+
+## White Hat: Data
+
+This hat grounds the decision in **rational analysis and facts**. It forces the team to look at available data and market trends to ensure the discussion is based on reality rather than just assumptions.
+
+## Yellow Hat: Positivity
+
+Teams use this to identify the **benefits and opportunities** of a decision. It helps highlight the potential revenue or market share a new idea could capture.
+
+## Black Hat: Downsides
+
+This provides a **defensive approach** by focusing on worst-case scenarios and potential risks, such as whether a new product might "cannibalize" existing ones. This makes the final decision more robust by preparing for what might not work.
+
+## Green Hat: Creativity
+
+When the team identifies risks, the green hat allows them to **generate creative solutions** and alternatives. For example, it can be used to brainstorm ways to prototype and test a product&apos;s value before a full launch.
+
+## Red Hat: Emotions
+
+This hat allows teams to incorporate **intuition and gut feelings** into an otherwise purely rational process. It helps the group check how everyone feels about a plan, which can lower anxiety and ensure everyone is aligned with the emotional weight of a high-stakes decision.
+
+## Blue Hat: Process
+
+This hat is used for **facilitation and control**, ensuring the meeting stays productive. The person in this role can shift the discussion between different hats or suggest next steps, such as postponing a final decision until more data is validated.
+
+Ultimately, this tool helps teams reach a "reasonable next step" because it ensures every perspective is heard, allowing the group to arrive at a balanced and well-vetted conclusion.
