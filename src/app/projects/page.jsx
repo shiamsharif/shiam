@@ -1,49 +1,60 @@
-import Image from 'next/image'
-
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
-    description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+    name: 'Bikroy Plus',
+    initials: 'BP',
+    highlights: [
+      'Contributed to a point-of-sale and inventory management platform built with Django REST Framework.',
+      'Built and enhanced APIs for blog management, product import and export, dashboards, product summaries, customers, suppliers, and inventory workflows.',
+      'Implemented structured API responses, filtering, sorting, data validation, and Excel-based product imports.',
+    ],
+    link: { href: 'https://bikroyplus.com/', label: 'bikroyplus.com' },
   },
   {
-    name: 'Animaginary',
-    description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+    name: 'Shodai Cart',
+    initials: 'SC',
+    highlights: [
+      'Developed the complete storefront frontend using Django Templates, HTML, CSS, JavaScript, and Tailwind CSS.',
+      'Created responsive, user-friendly interfaces and connected frontend pages to dynamic, backend-driven data.',
+    ],
+    link: { href: 'https://shodaicart.com/', label: 'shodaicart.com' },
   },
   {
-    name: 'HelioStream',
-    description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+    name: 'Miicon Solutions Website',
+    initials: 'MS',
+    highlights: [
+      'Developed and deployed a full-stack Django application featuring a Q&A forum, blog, and job portal.',
+      'Used Django Templates, Bootstrap, and Google reCAPTCHA to deliver secure, accessible, and user-friendly features.',
+    ],
+    link: {
+      href: 'https://www.miiconsolutions.com/',
+      label: 'miiconsolutions.com',
+    },
   },
   {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+    name: 'NUB ITSupport',
+    initials: 'NI',
+    highlights: [
+      'Built a Django REST API-powered issue-reporting platform for students, teachers, and staff.',
+      'Implemented workflows for reporting, managing, and tracking computer lab issues in real time.',
+    ],
+    link: {
+      href: 'https://github.com/shiamsharif/NUB_ITSupport',
+      label: 'github.com/shiamsharif/NUB_ITSupport',
+    },
   },
   {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+    name: 'Zenorin',
+    initials: 'ZE',
+    highlights: [
+      'Developed a responsive service showcase application using Next.js and Tailwind CSS.',
+      'Focused on a polished, consistent experience across desktop and mobile devices.',
+    ],
+    link: { href: 'https://zenorin.com/', label: 'zenorin.com' },
   },
+
 ]
 
 function LinkIcon(props) {
@@ -59,14 +70,15 @@ function LinkIcon(props) {
 
 export const metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description:
+    'A selection of web applications and digital products I’ve helped build.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="Projects I’ve helped bring to life."
+      intro="A selection of full-stack applications, backend systems, and responsive web experiences I’ve built or contributed to using Django, Django REST Framework, Next.js, and modern frontend technologies."
     >
       <ul
         role="list"
@@ -74,18 +86,29 @@ export default function Projects() {
       >
         {projects.map((project) => (
           <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={project.logo}
-                alt=""
-                className="h-8 w-8"
-                unoptimized
-              />
+            <div
+              aria-hidden="true"
+              className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white text-sm font-semibold text-teal-600 shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:text-teal-400 dark:ring-0"
+            >
+              {project.initials}
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              {project.link.href ? (
+                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              ) : (
+                project.name
+              )}
             </h2>
-            <Card.Description>{project.description}</Card.Description>
+            <ul className="relative z-10 mt-2 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              {project.highlights.map((highlight) => (
+                <li key={highlight} className="flex gap-2">
+                  <span className="text-teal-500" aria-hidden="true">
+                    •
+                  </span>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
             <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
               <LinkIcon className="h-6 w-6 flex-none" />
               <span className="ml-2">{project.link.label}</span>
