@@ -1,0 +1,93 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import icebergImage from './iceberg-model.png'
+
+export const article = {
+  author: 'Sheike Shiam Sharif',
+  date: '2026-07-07',
+  title: 'The Iceberg Model: Looking Beyond Events to Find Root Causes',
+  description:
+    'A practical systems-thinking tool for moving past visible events and uncovering patterns, structures, and mental models behind recurring problems.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Addressing problems only on their event level is often not enough. The real causes are often hidden from plain sight.
+
+The **Iceberg Model** is a tool that allows you to shift your perspective and see beyond the immediate events that everyone notices. It helps you uncover the root causes of why those events happen by looking at deeper levels of abstraction within a system that are not immediately obvious.
+
+<Image
+  src={icebergImage}
+  alt="Iceberg Model showing Events, Patterns, Structures, and Mental Models"
+/>
+
+## How to Use It
+
+The Iceberg Model consists of four levels:
+
+- Events
+- Patterns
+- Structures
+- Mental models
+
+Looking below individual events, you can see trends over time: **patterns**. Patterns are the clue for understanding the system **structures** behind them. Structures are the relationships and feedback loops inside a system. These structures are, in turn, based on the underlying **mental models** of people.
+
+Events and patterns show you what is happening. Structures and mental models tell you why it is happening.
+
+The deeper you can go in the iceberg, the more leverage you will have.
+
+## Investigate All Four Levels
+
+Here are some questions to help you understand each level within a certain problem or situation.
+
+### Events
+
+What is happening right now?
+
+### Patterns
+
+What has been happening over time? What are the trends?
+
+### Structures
+
+What is influencing these patterns?
+
+Where are the connections between patterns?
+
+### Mental Models
+
+What values, beliefs, or assumptions shape the system?
+
+It is important to note that answering these questions will likely require research and digging. This is especially true for mental models, which are hard to document and even harder to see in plain sight.
+
+## Example
+
+Let us look at a real-world example to better understand how the Iceberg Model works.
+
+Suppose there are a couple of bugs in the feature your product team just released. That is a single event. Your instinct might be to react to it and start fixing those bugs. That is useful, but it is not enough if you want to prevent the same problem from happening again in the future.
+
+If you look back in time, you may notice that every released feature comes with several bugs. That is a pattern. Digging deeper, you find that teams do not plan for testing before releasing a feature. QA only happens after release. Teams also usually have tight deadlines to ship features. These are structures of the system.
+
+Investigating further, you discover that teams value shipping on time over the quality of their work. The tight deadlines are imposed by managers, and teams believe it is not their place to push back.
+
+By looking beyond immediate events, you are able to find a root cause of the problem. You now have much more leverage for solving it.
+
+## Put This Tool Into Practice
+
+To apply the Iceberg Model, start with the visible event and then keep moving downward:
+
+- Name the immediate event.
+- Look for recurring patterns over time.
+- Identify the structures, rules, incentives, workflows, and feedback loops that create those patterns.
+- Surface the mental models, assumptions, beliefs, and values that keep those structures in place.
+
+The goal is not just to explain what happened. The goal is to find the level where a meaningful change can prevent the problem from repeating.
+
+## Sources
+
+- ["Connecting Systems Thinking and Action" by Ed Cunliff](https://thesystemsthinker.com/connecting-systems-thinking-and-action/)
+- ["Visualizing the systems behind our designs" by Justin Farrugia](https://uxdesign.cc/visualizing-the-systems-behind-our-designs-7a7c95b4cfb2)
