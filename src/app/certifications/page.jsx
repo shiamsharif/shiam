@@ -85,7 +85,7 @@ export default async function Certifications({ searchParams }) {
 
   return (
     <SimpleLayout
-      title="Certifications and credentials."
+      title="Certifications and Licenses."
       intro="A collection of professional certifications that reflect my commitment to continuous learning and building stronger technical skills."
     >
       <FilterTabs activeCategory={activeCategory} />

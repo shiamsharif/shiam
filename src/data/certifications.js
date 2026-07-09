@@ -1,6 +1,7 @@
 export const certificateCategories = [
   { value: 'swe', label: 'SWE' },
   { value: 'pm', label: 'PM' },
+  { value: 'research', label: 'Research' },
   { value: 'else', label: 'Else' },
 ]
 
@@ -8,7 +9,7 @@ export const certificateCategories = [
 // here. Use a path such as `/certificates/certificate-name.pdf` for `file`.
 //
 // category: 'swe' for software engineering, 'pm' for project/product
-// management, and 'else' for everything else.
+// management, 'research' for research work, and 'else' for everything else.
 //
 // displayOrder controls which certificate appears first. Use 1 for the first
 // item, 2 for the second, etc. Certificates without displayOrder are sorted by
