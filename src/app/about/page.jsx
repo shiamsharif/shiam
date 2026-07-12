@@ -68,15 +68,15 @@ export default function About() {
             <p>
               If you had asked me a few years ago what I wanted to become, I would have simply said, "a software engineer." Today, my answer is a little different. I still love writing code, but I'm just as interested in understanding how products are built, how teams work together, and how research can solve real-world problems.
             </p>
-            <p>
+            {/* <p>
               My journey started in 2009 when I used my father's Sony VAIO for the first time. Like many kids, I mostly clicked around without knowing what I was doing. But as I grew older, I became curious about what was happening behind the screen. That curiosity eventually led me to programming, and I realized that I could write a few lines of code and create something from nothing. I was hooked.
-            </p>
-            <p>
+            </p> */}
+            {/* <p>
               As a kid, I wasn't someone who talked a lot. I spent most of my time reading books, playing football or cricket, and later experimenting with computers. I've always enjoyed learning new things. Looking back, I think that habit has had the biggest influence on my life.
-            </p>
-            <p>
+            </p> */}
+            {/* <p>
               One of the hardest times I went through was having L5/S1 spine surgery when I was young. Recovery wasn't easy, but it changed me. Since I couldn't do many of the things I normally enjoyed, I spent more time reading books and the Holy Quran. That period taught me patience and made reading a part of my everyday life. Even today, whenever I want to learn something new, my first instinct is to find a good book.
-            </p>
+            </p> */}
 
             <p>
               At university, I enjoyed almost every programming-related course, but Data Structures and Algorithms was my favorite. It was known as one of the toughest subjects, and I was happy to earn a perfect GPA in it. More than the grade itself, I enjoyed solving problems and understanding why things worked the way they did.
