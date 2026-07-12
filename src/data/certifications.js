@@ -53,8 +53,49 @@ export const certifications = [
     credentialUrl: 'https://drive.google.com/file/d/1elr4Ax4BeAX3iMamcO-_EshQI3lbdds6/view?usp=sharing',
     file: '/certificates/PM.png',
     fileType: 'image',
-  }
+  },
+  {
+    slug: 'Introduction-to-Python',
+    name: 'Introduction to Python',
+    organization: 'DataCamp',
+    category: 'swe',
+    displayOrder: 1,
+    issueDate: '2024-10-24',
+    expirationDate: null,
+    credentialId: '#36,783,536',
+    credentialUrl: 'https://drive.google.com/file/d/1_M8M5DO2yLXs058idHJibU7kSWyFJKhm/view?usp=drive_link',
+    file: '/certificates/ITP.png',
+    fileType: 'image',
+  },
+  {
+    slug: 'Introduction-to-SQL',
+    name: 'Introduction to SQL',
+    organization: 'DataCamp',
+    category: 'swe',
+    displayOrder: 2,
+    issueDate: '2024-11-04',
+    expirationDate: null,
+    credentialId: '#36,873,228',
+    credentialUrl: 'https://drive.google.com/file/d/13A4aQHgrCeZoYp-CK4G6CErUcNLh_muB/view?usp=sharing',
+    file: '/certificates/ITS.png',
+    fileType: 'image',
+  },
+  {
+    slug: 'International-Student-LED-Con-2023',
+    name: 'International Student LED-Con 2023',
+    organization: 'IEEE',
+    category: 'research',
+    displayOrder: 1,
+    issueDate: '2023-13-04',
+    expirationDate: null,
+    credentialId: '',
+    credentialUrl: 'https://drive.google.com/file/d/1XOTfBskL1TCto8fVJUdqPGqhjzkMukGG/view?usp=sharing',
+    file: '/certificates/IEEE.png',
+    fileType: 'image',
+  },
 ]
+
+
 
 export function normalizeCertificateCategory(category) {
   return certificateCategories.some(({ value }) => value === category)

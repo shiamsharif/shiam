@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -47,6 +46,9 @@ export default async function CertificationDetail({ params }) {
 
   if (!certification) notFound()
 
+  let fileType = certification.fileType?.toLowerCase()
+  let isImage = certification.file && fileType !== 'pdf'
+
   return (
     <Container className="mt-16 sm:mt-32">
       <article className="mx-auto max-w-4xl">
@@ -67,8 +69,14 @@ export default async function CertificationDetail({ params }) {
         </header>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
-          <div className="overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-900/10 dark:bg-zinc-800 dark:ring-white/10">
-            {certification.fileType?.toLowerCase() === 'pdf' ? (
+          <div
+            className={
+              isImage
+                ? 'overflow-hidden'
+                : 'overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-900/10 dark:bg-zinc-800 dark:ring-white/10'
+            }
+          >
+            {fileType === 'pdf' ? (
               <object
                 data={certification.file}
                 type="application/pdf"
@@ -83,13 +91,10 @@ export default async function CertificationDetail({ params }) {
                 </div>
               </object>
             ) : certification.file ? (
-              <Image
+              <img
                 src={certification.file}
                 alt={`${certification.name} certificate`}
-                width={1200}
-                height={900}
-                className="h-auto w-full"
-                priority
+                className="block h-auto w-full"
               />
             ) : (
               <div className="flex aspect-[4/3] items-center justify-center text-zinc-400 dark:text-zinc-500">
@@ -129,7 +134,7 @@ export default async function CertificationDetail({ params }) {
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex rounded-full bg-zinc-800 px-4 py-2 text-sm font-semibold text-white transition hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
               >
-                Verify credential
+                View & Download
               </a>
             )}
           </aside>
