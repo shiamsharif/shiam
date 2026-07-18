@@ -28,12 +28,27 @@ export const certifications = [
   //   file: '/certificates/certificate-name.pdf',
   //   fileType: 'pdf',
   // },
+
+  // PM
+    {
+    slug: 'scrum-master-certification-prep',
+    name: 'Scrum Master Certification Prep ',
+    organization: 'Udemy',
+    category: 'pm',
+    displayOrder: 1,
+    issueDate: '2026-07-18',
+    expirationDate: null,
+    credentialId: 'UC-875f6229-08e2-4249-87a5-be78f680afbb.jpg',
+    credentialUrl: 'https://drive.google.com/file/d/1VtmSvfPlkTfelf7UYKBsfI1ZHPprCgKU/view?usp=sharing',
+    file: '/certificates/SMCP.png',
+    fileType: 'image',
+  },
   {
     slug: 'free-introduction-project-management-professional-pmp',
     name: 'Free Introduction: Project Management Professional (PMP)®',
     organization: 'Project Management Institute (PMI.org)',
     category: 'pm',
-    displayOrder: 1,
+    displayOrder: 3,
     issueDate: '2026-07-05',
     expirationDate: null,
     credentialId: '',
@@ -54,6 +69,9 @@ export const certifications = [
     file: '/certificates/PM.png',
     fileType: 'image',
   },
+
+
+  // SWE
   {
     slug: 'Introduction-to-Python',
     name: 'Introduction to Python',
@@ -80,6 +98,8 @@ export const certifications = [
     file: '/certificates/ITS.png',
     fileType: 'image',
   },
+
+  // Research
   {
     slug: 'International-Student-LED-Con-2023',
     name: 'International Student LED-Con 2023',
