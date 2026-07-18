@@ -279,7 +279,7 @@ export default async function Home() {
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://www.linkedin.com/in/shiamsharif/"
+              href="https://www.linkedin.com/in/shiam-sharif/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
