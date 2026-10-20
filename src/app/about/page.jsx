@@ -7,9 +7,73 @@ import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
-  XIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
+
+const experience = [
+  {
+    company: 'Miicon Solutions Limited',
+    role: 'Project Manager',
+    arrangement: 'Hybrid',
+    start: { label: 'September 2025', dateTime: '2025-09' },
+    end: { label: 'Present' },
+    highlights: [
+      'Coordinate project planning and delivery for Bikroy Plus, Protocol People, and the Miicon Solutions platform.',
+      'Translate requirements into actionable tasks and prioritize work in ClickUp.',
+      'Track progress, dependencies, and blockers across active work.',
+      'Collaborate with frontend and backend developers.',
+      'Coordinate testing, bug tracking, and feature verification.',
+      'Maintain documentation and communicate project updates.',
+    ],
+  },
+  {
+    company: 'Exoveon',
+    role: 'Software Developer',
+    arrangement: 'Part-time',
+    start: { label: 'September 2025', dateTime: '2025-09' },
+    end: { label: 'March 2026', dateTime: '2026-03' },
+    highlights: [
+      'Independently developed the ShodaiCart frontend using Django Templates and Tailwind CSS.',
+      'Built responsive, reusable UI components.',
+      'Contributed to Zenorin using Next.js and Tailwind CSS.',
+    ],
+  },
+]
+
+const skillGroups = [
+  {
+    title: 'Project management',
+    skills: [
+      'Project Planning',
+      'Requirements Analysis',
+      'Task Prioritization',
+      'Team Coordination',
+      'Progress and Milestone Tracking',
+      'Stakeholder Communication',
+      'Risk and Issue Tracking',
+      'Testing Coordination',
+      'Project Documentation',
+      'Agile/Scrum and SDLC',
+      'ClickUp',
+    ],
+  },
+  {
+    title: 'Software development',
+    skills: [
+      'Python',
+      'Django and Django REST Framework',
+      'REST API Development and Integration',
+      'JavaScript',
+      'React and Next.js',
+      'Tailwind CSS',
+      'PostgreSQL and MySQL',
+      'Git and GitHub',
+      'Postman',
+      'Celery and Redis',
+      'Docker fundamentals',
+    ],
+  },
+]
 
 function SocialLink({ className, href, children, icon: Icon }) {
   let isExternal = typeof href === 'string' && /^https?:\/\//.test(href)
@@ -40,10 +104,18 @@ function MailIcon(props) {
   )
 }
 
+function LocationIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path d="M12 2.75a7 7 0 0 0-7 7c0 5.25 7 11.5 7 11.5s7-6.25 7-11.5a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z" />
+    </svg>
+  )
+}
+
 export const metadata = {
   title: 'About',
   description:
-    'I’m Spencer Sharp. I live in New York City, where I design the future.',
+    'About Sheike Shiam Sharif, a Project Manager and Software Developer at Miicon Solutions Limited in Dhaka, Bangladesh.',
 }
 
 export default function About() {
@@ -54,48 +126,49 @@ export default function About() {
           <div className="max-w-xs px-2.5 lg:max-w-none">
             <Image
               src={portraitImage}
-              alt=""
+              alt="Sheike Shiam Sharif"
               sizes="(min-width: 1024px) 32rem, 20rem"
               className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              priority
             />
           </div>
         </div>
-        <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I'm Shiam Sharif, who loves reading books.
-          </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            <p>
-              If you had asked me a few years ago what I wanted to become, I would have simply said, "a software engineer." Today, my answer is a little different. I still love writing code, but I'm just as interested in understanding how products are built, how teams work together, and how research can solve real-world problems.
-            </p>
-            {/* <p>
-              My journey started in 2009 when I used my father's Sony VAIO for the first time. Like many kids, I mostly clicked around without knowing what I was doing. But as I grew older, I became curious about what was happening behind the screen. That curiosity eventually led me to programming, and I realized that I could write a few lines of code and create something from nothing. I was hooked.
-            </p> */}
-            {/* <p>
-              As a kid, I wasn't someone who talked a lot. I spent most of my time reading books, playing football or cricket, and later experimenting with computers. I've always enjoyed learning new things. Looking back, I think that habit has had the biggest influence on my life.
-            </p> */}
-            {/* <p>
-              One of the hardest times I went through was having L5/S1 spine surgery when I was young. Recovery wasn't easy, but it changed me. Since I couldn't do many of the things I normally enjoyed, I spent more time reading books and the Holy Quran. That period taught me patience and made reading a part of my everyday life. Even today, whenever I want to learn something new, my first instinct is to find a good book.
-            </p> */}
 
+        <div className="lg:order-first lg:row-span-2">
+          <p className="text-sm font-semibold tracking-wide text-teal-600 uppercase dark:text-teal-400">
+            About
+          </p>
+          <h1 className="mt-3 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            I bring project direction and development context together.
+          </h1>
+          <div className="mt-6 space-y-6 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              At university, I enjoyed almost every programming-related course, but Data Structures and Algorithms was my favorite. It was known as one of the toughest subjects, and I was happy to earn a perfect GPA in it. More than the grade itself, I enjoyed solving problems and understanding why things worked the way they did.
+              I’m Sheike Shiam Sharif, a Project Manager at Miicon Solutions
+              Limited. I coordinate software projects by clarifying
+              requirements, prioritizing tasks, tracking progress, and keeping
+              team members and stakeholders aligned.
             </p>
             <p>
-              Something else happened along the way. While reading <i>Inspired: How to Create Products Customers Love</i>, I started looking beyond code. I became interested in how successful products are planned, how engineering teams make decisions, and how technical leaders balance business goals with technology. That's what sparked my interest in technical project management.
+              My day-to-day work includes team coordination, testing
+              coordination, documentation, blocker tracking, and clear project
+              updates. I’m interested in both technical and broader business
+              projects, wherever thoughtful planning and communication can help
+              a team deliver well.
             </p>
             <p>
-              My goal isn't to stop being an engineer. I actually want to stay close to technology. I want to become someone who understands software engineering, AI research, product development, and project management well enough to connect all of them. I enjoy building things, but I also enjoy helping people build them together.
+              My software development background helps me understand technical
+              challenges and communicate effectively with engineers. I can
+              connect delivery decisions with the practical work involved in
+              APIs, interfaces, data, testing, and deployment.
             </p>
             <p>
-              Outside of work, you'll usually find me with a cup of coffee and a book. One of my dreams is to have a quiet farmhouse with a small library where I can read, think, work on research, and occasionally write code without distractions.
+              I’m preparing for CAPM to strengthen my project management
+              knowledge. I hold a BSc in Computer Science and Engineering from
+              Northern University Bangladesh, with a GPA of 3.80/4.00.
             </p>
-            <p>
-              I'm still learning, still making mistakes, and still building. I hope that never changes.
-            </p>
-            
           </div>
         </div>
+
         <div className="lg:pl-20">
           <ul role="list">
             <SocialLink
@@ -113,11 +186,11 @@ export default function About() {
               Follow on GitHub
             </SocialLink>
             <SocialLink
-              href="https://www.linkedin.com/in/shiamsharif/"
+              href="https://www.linkedin.com/in/shiam-sharif"
               icon={LinkedInIcon}
               className="mt-4"
             >
-              Follow on LinkedIn
+              Connect on LinkedIn
             </SocialLink>
             <SocialLink
               href="mailto:shiam.sharif.07@gmail.com"
@@ -126,9 +199,90 @@ export default function About() {
             >
               shiam.sharif.07@gmail.com
             </SocialLink>
+            <li className="mt-4 flex text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              <LocationIcon className="h-6 w-6 flex-none fill-zinc-500" />
+              <span className="ml-4">Dhaka, Bangladesh</span>
+            </li>
           </ul>
         </div>
       </div>
+
+      <section aria-labelledby="experience-heading" className="mt-24 sm:mt-32">
+        <div className="max-w-2xl">
+          <p className="text-sm font-semibold tracking-wide text-teal-600 uppercase dark:text-teal-400">
+            Career
+          </p>
+          <h2
+            id="experience-heading"
+            className="mt-3 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
+          >
+            Experience
+          </h2>
+        </div>
+        <div className="mt-10 space-y-12">
+          {experience.map((item) => (
+            <article
+              key={`${item.company}-${item.role}`}
+              className="grid gap-5 border-t border-zinc-100 pt-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)] dark:border-zinc-700/40"
+            >
+              <div>
+                <h3 className="font-semibold text-zinc-800 dark:text-zinc-100">
+                  {item.role}
+                </h3>
+                <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                  {item.company} · {item.arrangement}
+                </p>
+                <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-500">
+                  <time dateTime={item.start.dateTime}>{item.start.label}</time>{' '}
+                  <span aria-hidden="true">—</span>{' '}
+                  <time dateTime={item.end.dateTime}>{item.end.label}</time>
+                </p>
+              </div>
+              <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
+                {item.highlights.map((highlight) => (
+                  <li key={highlight} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-teal-500" />
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="skills-heading" className="mt-24 sm:mt-32">
+        <div className="max-w-2xl">
+          <p className="text-sm font-semibold tracking-wide text-teal-600 uppercase dark:text-teal-400">
+            Capabilities
+          </p>
+          <h2
+            id="skills-heading"
+            className="mt-3 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
+          >
+            Skills
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-12 lg:grid-cols-2">
+          {skillGroups.map((group) => (
+            <div key={group.title}>
+              <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                {group.title}
+              </h3>
+              <ul className="mt-5 flex flex-wrap gap-2" role="list">
+                {group.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="rounded-full border border-zinc-200 px-3 py-1.5 text-sm text-zinc-700 dark:border-zinc-700 dark:text-zinc-300"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
     </Container>
   )
 }

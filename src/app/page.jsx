@@ -9,7 +9,6 @@ import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
-  XIcon,
 } from '@/components/SocialIcons'
 import logoMiicon from '@/images/logos/miicon.png'
 import image1 from '@/images/photos/image-1.jpg'
@@ -142,18 +141,19 @@ function Newsletter() {
 }
 
 function Role({ role }) {
-  let startLabel =
-    typeof role.start === 'string' ? role.start : role.start.label
-  let startDate =
-    typeof role.start === 'string' ? role.start : role.start.dateTime
-
-  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
-  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
-
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        {role.logo ? (
+          <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        ) : (
+          <span
+            aria-hidden="true"
+            className="text-xs font-semibold text-teal-600 dark:text-teal-400"
+          >
+            {role.initials}
+          </span>
+        )}
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
@@ -162,16 +162,16 @@ function Role({ role }) {
         </dd>
         <dt className="sr-only">Role</dt>
         <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-          {role.title}
+          {role.title} · {role.arrangement}
         </dd>
         <dt className="sr-only">Date</dt>
         <dd
           className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-          aria-label={`${startLabel} until ${endLabel}`}
+          aria-label={`${role.start.label} until ${role.end.label}`}
         >
-          <time dateTime={startDate}>{startLabel}</time>{' '}
+          <time dateTime={role.start.dateTime}>{role.start.label}</time>{' '}
           <span aria-hidden="true">—</span>{' '}
-          <time dateTime={endDate}>{endLabel}</time>
+          <time dateTime={role.end.dateTime}>{role.end.label}</time>
         </dd>
       </dl>
     </li>
@@ -181,29 +181,31 @@ function Role({ role }) {
 function Resume() {
   let resume = [
     {
-      company: 'Miicon Solutions',
-      title: 'Jr. Backend Developer',
+      company: 'Miicon Solutions Limited',
+      title: 'Project Manager',
+      arrangement: 'Hybrid',
       logo: logoMiicon,
-      start: '2025',
+      start: { label: 'Sep 2025', dateTime: '2025-09' },
       end: {
         label: 'Present',
-        dateTime: new Date().getFullYear().toString(),
+        dateTime: undefined,
       },
     },
-    // {
-    //   company: 'Airbnb',
-    //   title: 'Product Designer',
-    //   logo: logoAirbnb,
-    //   start: '2014',
-    //   end: '2019',
-    // },
+    {
+      company: 'Exoveon',
+      title: 'Software Developer',
+      arrangement: 'Part-time',
+      initials: 'EX',
+      start: { label: 'Sep 2025', dateTime: '2025-09' },
+      end: { label: 'Mar 2026', dateTime: '2026-03' },
+    },
   ]
 
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
+        <span className="ml-3">Experience</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
@@ -260,14 +262,27 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software Engineer, AI/ML Researcher, and Aspiring Technical Project Manager.
-
+            Project Manager &amp; Software Developer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Shiam Sharif, a software engineer and AI/ML researcher from Bangladesh. I build scalable web applications, conduct research in artificial intelligence and machine learning, and enjoy transforming complex ideas into practical solutions. Alongside software development, I’m expanding my expertise in technical project management to bridge the gap between engineering and business, helping teams deliver reliable, impactful products.
-
+            I’m Sheike Shiam Sharif. I connect project planning, team
+            coordination, and hands-on development to help teams turn
+            requirements into working software.
           </p>
-          <div className="mt-6 flex gap-6">
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/projects">View my work</Button>
+            <Button
+              href="/files/sheike-shiam-sharif-resume.pdf"
+              download
+              variant="secondary"
+            >
+              Download CV
+            </Button>
+            <Button href="mailto:shiam.sharif.07@gmail.com" variant="secondary">
+              Contact me
+            </Button>
+          </div>
+          <div className="mt-6 flex gap-6" aria-label="Social profiles">
             <SocialLink
               href="https://www.instagram.com/shiam_sharif/"
               aria-label="Follow on Instagram"
@@ -279,7 +294,7 @@ export default async function Home() {
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://www.linkedin.com/in/shiam-sharif/"
+              href="https://www.linkedin.com/in/shiam-sharif"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
@@ -295,8 +310,8 @@ export default async function Home() {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
             <Resume />
+            <Newsletter />
           </div>
         </div>
       </Container>

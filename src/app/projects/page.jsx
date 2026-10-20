@@ -5,56 +5,59 @@ const projects = [
   {
     name: 'Bikroy Plus',
     initials: 'BP',
-    highlights: [
-      'Contributed to a point-of-sale and inventory management platform built with Django REST Framework.',
-      'Built and enhanced APIs for blog management, product import and export, dashboards, product summaries, customers, suppliers, and inventory workflows.',
-      'Implemented structured API responses, filtering, sorting, data validation, and Excel-based product imports.',
-    ],
+    purpose: 'A point-of-sale and inventory management platform.',
+    contribution:
+      'Project planning support, requirements clarification, task tracking, feature verification, REST APIs, dashboards, and Excel import/export.',
+    technologies: ['Django REST Framework', 'REST APIs', 'Excel'],
     link: { href: 'https://bikroyplus.com/', label: 'bikroyplus.com' },
-  },
-  {
-    name: 'Shodai Cart',
-    initials: 'SC',
-    highlights: [
-      'Developed the complete storefront frontend using Django Templates, HTML, CSS, JavaScript, and Tailwind CSS.',
-      'Created responsive, user-friendly interfaces and connected frontend pages to dynamic, backend-driven data.',
-    ],
-    link: { href: 'https://shodaicart.com/', label: 'shodaicart.com' },
   },
   {
     name: 'Miicon Solutions Website',
     initials: 'MS',
-    highlights: [
-      'Developed and deployed a full-stack Django application featuring a Q&A forum, blog, and job portal.',
-      'Used Django Templates, Bootstrap, and Google reCAPTCHA to deliver secure, accessible, and user-friendly features.',
-    ],
+    purpose:
+      'A company platform covering content, recruitment, contact management, staff dashboards, and employee verification.',
+    contribution:
+      'Implementation coordination, issue tracking, testing support, and backend development.',
+    technologies: ['Django', 'Django Templates', 'Bootstrap', 'reCAPTCHA'],
     link: {
       href: 'https://www.miiconsolutions.com/',
       label: 'miiconsolutions.com',
     },
   },
   {
-    name: 'NUB ITSupport',
-    initials: 'NI',
-    highlights: [
-      'Built a Django REST API-powered issue-reporting platform for students, teachers, and staff.',
-      'Implemented workflows for reporting, managing, and tracking computer lab issues in real time.',
-    ],
+    name: 'ShodaiCart',
+    initials: 'SC',
+    purpose: 'An e-commerce platform for building and operating online stores.',
+    contribution:
+      'Independently developed the frontend using Django Templates and Tailwind CSS, including responsive, reusable interface components.',
+    technologies: ['Django Templates', 'Tailwind CSS', 'JavaScript'],
+    link: { href: 'https://shodaicart.com/', label: 'shodaicart.com' },
+  },
+  {
+    name: 'Protocol People',
+    initials: 'PP',
+    purpose: 'An employee management platform.',
+    contribution:
+      'Built notification workflows for attendance reminders, leave updates, and company announcements.',
+    technologies: ['Firebase Cloud Messaging', 'Celery', 'Redis'],
     link: {
-      href: 'https://github.com/shiamsharif/NUB_ITSupport',
-      label: 'github.com/shiamsharif/NUB_ITSupport',
+      href: 'https://protocol.miicon.net/',
+      label: 'protocol.miicon.net',
     },
   },
   {
-    name: 'Zenorin',
-    initials: 'ZE',
-    highlights: [
-      'Developed a responsive service showcase application using Next.js and Tailwind CSS.',
-      'Focused on a polished, consistent experience across desktop and mobile devices.',
-    ],
-    link: { href: 'https://zenorin.com/', label: 'zenorin.com' },
+    name: 'NUB ITSupport',
+    initials: 'NI',
+    purpose:
+      'A university lab issue-reporting platform for students, teachers, and staff.',
+    contribution:
+      'Built Django REST APIs for issue submission, management, and status tracking.',
+    technologies: ['Python', 'Django REST Framework', 'REST APIs'],
+    link: {
+      href: 'https://github.com/shiamsharif/NUB_ITSuppot',
+      label: 'github.com/shiamsharif/NUB_ITSuppot',
+    },
   },
-
 ]
 
 function LinkIcon(props) {
@@ -71,18 +74,18 @@ function LinkIcon(props) {
 export const metadata = {
   title: 'Projects',
   description:
-    'A selection of web applications and digital products I’ve helped build.',
+    'Selected projects coordinated and developed by Sheike Shiam Sharif, including business platforms, e-commerce, employee management, and REST APIs.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Projects I’ve helped bring to life."
-      intro="A selection of full-stack applications, backend systems, and responsive web experiences I’ve built or contributed to using Django, Django REST Framework, Next.js, and modern frontend technologies."
+      title="Selected projects and contributions."
+      intro="A selection of products I’ve helped plan, coordinate, test, and build. Each entry separates the project’s purpose from my specific contribution."
     >
       <ul
         role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-2"
       >
         {projects.map((project) => (
           <Card as="li" key={project.name}>
@@ -99,13 +102,24 @@ export default function Projects() {
                 project.name
               )}
             </h2>
-            <ul className="relative z-10 mt-2 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-              {project.highlights.map((highlight) => (
-                <li key={highlight} className="flex gap-2">
-                  <span className="text-teal-500" aria-hidden="true">
-                    •
-                  </span>
-                  <span>{highlight}</span>
+            <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+              {project.purpose}
+            </p>
+            <div className="relative z-10 mt-5">
+              <h3 className="text-xs font-semibold tracking-wide text-zinc-800 uppercase dark:text-zinc-200">
+                My contribution
+              </h3>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                {project.contribution}
+              </p>
+            </div>
+            <ul className="relative z-10 mt-5 flex flex-wrap gap-2" role="list">
+              {project.technologies.map((technology) => (
+                <li
+                  key={technology}
+                  className="rounded-full bg-zinc-100 px-2.5 py-1 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"
+                >
+                  {technology}
                 </li>
               ))}
             </ul>

@@ -6,6 +6,13 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-teal-500);
+    outline-offset: 3px;
+  }
+}
+
 @theme {
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.5rem;
