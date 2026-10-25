@@ -29,16 +29,29 @@ export const certifications = [
   //   fileType: 'pdf',
   // },
 
-  // PM
-    {
+  // PM 
+  {
+    slug: 'capm-exam-prep-course',
+    name: 'CAPM Exam Prep Course',
+    organization: 'Udemy',
+    category: 'pm',
+    displayOrder: 1,
+    issueDate: '2026-10-23',
+    expirationDate: null,
+    credentialId: 'UC-80cf0726-5756-4c29-b0f1-e5fff5cc47b5',
+    credentialUrl: 'https://drive.google.com/file/d/1hr63mWBCGDdRpmleCe-D-E8jwhfPMe8L/view?usp=sharing',
+    file: '/certificates/CAPM_Prep.png',
+    fileType: 'image',
+  },
+  {
     slug: 'scrum-master-certification-prep',
     name: 'Scrum Master Certification Prep ',
     organization: 'Udemy',
     category: 'pm',
-    displayOrder: 1,
+    displayOrder: 2,
     issueDate: '2026-07-18',
     expirationDate: null,
-    credentialId: 'UC-875f6229-08e2-4249-87a5-be78f680afbb.jpg',
+    credentialId: 'UC-875f6229-08e2-4249-87a5-be78f680afbb',
     credentialUrl: 'https://drive.google.com/file/d/1VtmSvfPlkTfelf7UYKBsfI1ZHPprCgKU/view?usp=sharing',
     file: '/certificates/SMCP.png',
     fileType: 'image',
@@ -61,7 +74,7 @@ export const certifications = [
     name: 'Project Management',
     organization: 'FutureNation',
     category: 'pm',
-    displayOrder: 2,
+    displayOrder: 4,
     issueDate: '2026-07-03',
     expirationDate: null,
     credentialId: '',
